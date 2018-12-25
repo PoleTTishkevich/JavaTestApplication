@@ -1,0 +1,144 @@
+body {
+	background-image: url("../img/background-image.jpg");
+	background-size: cover;
+}
+
+.red {
+	color: red;
+}
+
+label{
+	color: rgb(209, 209, 217);
+	float:left;
+	margin: 10px auto;
+	padding: 15px 10px 12px 10px;
+	}
+
+.regFormElement {
+	float: right;
+	width: 230px;
+	margin: 10px auto;
+	padding: 12px 20px 12px 30px;
+	border-radius: 30px;
+	font-size: 18px;
+	color: black;
+	border-color: rgba(0, 0, 0, 0);
+	background-color: rgba(255, 255, 255, 0.6);
+}
+
+.regFormElement:checked {
+	border-color: rgba(0, 0, 0, 0);
+	border-radius: 30px;
+}
+
+.regFormElement:active {
+	border-color: rgba(0, 0, 0, 0);
+	border-radius: 30px;
+}
+
+.regFormElement:focus {
+	border-color: rgba(0, 0, 0, 0);
+	border-radius: 30px;
+}
+
+.first {
+	margin: 200px auto 30px;
+	max-width: 350px;
+}
+.regFirst {
+	margin: 120px auto 30px;
+	max-width: 380px;
+}
+
+.formElement {
+	width: 260px;
+	margin: 10px auto;
+	padding: 12px 20px 12px 50px;
+	border-radius: 30px;
+	font-size: 18px;
+	color: black;
+	border-color: rgba(0, 0, 0, 0);
+	background-color: rgba(255, 255, 255, 0.6);
+}
+
+.formElement:checked {
+	border-color: rgba(0, 0, 0, 0);
+	border-radius: 30px;
+}
+
+.formElement:active {
+	border-color: rgba(0, 0, 0, 0);
+	border-radius: 30px;
+}
+
+.formElement:focus {
+	border-color: rgba(0, 0, 0, 0);
+	border-radius: 30px;
+}
+
+.submitElement {
+	width: 330px;
+	position: relative;
+	display: inline-block;
+	font-size: 100%;
+	font-weight: 700;
+	color: rgb(209, 209, 217);
+	text-decoration: none;
+	text-shadow: 0 -1px 2px rgba(0, 0, 0, .2);
+	padding: 1em 1em;
+	margin-top: 10px;
+	outline: none;
+	border-radius: 30px;
+	background: linear-gradient(rgb(110, 112, 120), rgb(81, 81, 86))
+		rgb(110, 112, 120);
+	box-shadow: 0 1px rgba(255, 255, 255, .2) inset, 0 3px 5px
+		rgba(0, 1, 6, .5), 0 0 1px 1px rgba(0, 1, 6, .2);
+	transition: .2s ease-in-out;
+}
+
+.submitElement:hover:not (:active ) {
+	background: linear-gradient(rgb(126, 126, 134), rgb(70, 71, 76))
+		rgb(126, 126, 134);
+}
+
+.submitElement:active {
+	top: 1px;
+	background: linear-gradient(rgb(76, 77, 82), rgb(56, 57, 62))
+		rgb(76, 77, 82);
+	box-shadow: 0 0 1px rgba(0, 0, 0, .5) inset, 0 2px 3px rgba(0, 0, 0, .5)
+		inset, 0 1px 1px rgba(255, 255, 255, .1);
+}
+
+.nextElement {
+	margin: 20px auto 20px;
+	max-width: 350px;
+	color: rgb(209, 209, 217);
+	padding: 10px;
+}
+
+.left {
+	margin-right: 20px;
+	text-decoration: none;
+	float: left;
+	color: rgb(209, 209, 217);
+}
+
+.right {
+	margin-left: 20px;
+	float: right;
+	color: rgb(209, 209, 217);
+	text-decoration: none;
+}
+
+.right:hover, .left:hover {
+	border-radius: 20px;
+	border-color: white;
+	padding: 5px;
+	background: linear-gradient(rgb(110, 112, 120), rgb(81, 81, 86))
+		rgb(110, 112, 120);
+}
+
+.lang {
+	float: right;
+	margin-right: 90px;
+}

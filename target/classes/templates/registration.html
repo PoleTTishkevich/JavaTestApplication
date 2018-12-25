@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Spring Security Example</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="stylesheet" th:href="@{/css/newstyle.css}"
+	href="../../css/style.css" />
+<link rel="icon" href="http://vladmaxi.net/favicon.ico"
+	type="image/x-icon">
+<link rel="shortcut icon" href="http://vladmaxi.net/favicon.ico"
+	type="image/x-icon">
+</head>
+<body>
+	
+	<form th:action="@{/registrate}" method="post" class="regFirst">
+	<div th:if="${param.error}" th:text="${param.error}" class="red">Invalid data</div>
+		<div>
+			<label> Login: </label><input type="text" name="username" class="regFormElement"/>
+			
+		</div>
+		<div>
+			<label> Password: </label><input type="password" name="password" class="regFormElement"/>
+			
+		</div>
+		<div>
+			<label> First name: </label><input type="text" name="fname" class="regFormElement"/>
+			
+		</div>
+		<div>
+			<label> Last name: </label><input type="text" name="lname" class="regFormElement"/>
+			
+		</div>
+		<div>
+			<label> E-mail: </label><input type="text" name="email" class="regFormElement"/>
+			
+		</div>
+		<div>
+			<label> City: </label><input type="text" name="city" class="regFormElement"/>
+			
+		</div>
+		<div>
+			<input type="submit" value="Sign In" class="submitElement"/>
+		</div>
+	</form>
+</body>
+</html>
