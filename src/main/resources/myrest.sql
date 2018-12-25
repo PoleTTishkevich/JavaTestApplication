@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 25 2018 г., 21:53
+-- Время создания: Дек 25 2018 г., 22:45
 -- Версия сервера: 5.6.37
 -- Версия PHP: 5.5.38
 
@@ -91,7 +91,7 @@ CREATE TABLE `question` (
   `correct_answer_number` int(11) NOT NULL,
   `first_answer` varchar(255) NOT NULL,
   `forth_answer` varchar(255) NOT NULL,
-  `question_text` varchar(255) NOT NULL,
+  `question_text` text NOT NULL,
   `second_answer` varchar(255) NOT NULL,
   `third_answer` varchar(255) NOT NULL,
   `category_id` int(11) NOT NULL
