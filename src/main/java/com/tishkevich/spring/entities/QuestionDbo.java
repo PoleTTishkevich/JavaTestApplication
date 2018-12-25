@@ -18,6 +18,7 @@ public class QuestionDbo {
     private int id;
 
     @NotNull
+    @Column(columnDefinition = "TEXT")
     private String questionText;
 
     @ManyToOne(fetch = FetchType.LAZY)

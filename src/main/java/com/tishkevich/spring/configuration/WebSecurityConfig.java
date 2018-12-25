@@ -24,8 +24,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		 http.csrf().disable();
-		http.authorizeRequests().antMatchers("/", "/hello", "/api/getRandomQuestions", "/api/check", "/api/getAllCategories", "/api/getRandomQuestions/*").permitAll();
-		http.authorizeRequests().antMatchers("/api/check").access("hasAnyRole(\"ROLE_USER\", \"ROLE_ADMIN\")");
+		http.authorizeRequests().antMatchers( "/hello", "/api/getRandomQuestions", "/api/check", "/api/getAllCategories", "/api/getRandomQuestions/*").permitAll();
+		http.authorizeRequests().antMatchers("/api/check", "/user", "/admin", "/").access("hasAnyRole(\"ROLE_USER\", \"ROLE_ADMIN\")");
 		http.authorizeRequests().antMatchers("/api/getAllQuestions", "/api/delete/*", "/api/add").access("hasRole(\"ROLE_ADMIN\")");
 		http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/403");
 				http.authorizeRequests().and().formLogin().loginPage("/login").defaultSuccessUrl("/redirect/new").failureUrl("/login?error=true")//
