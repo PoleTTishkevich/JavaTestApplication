@@ -8,10 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @RestController
 @RequestMapping("/api")
@@ -27,26 +24,27 @@ public class QuestionController {
     }
 
     @GetMapping(value = "/getAllQuestions")
-    public ApiResponse getAllQuestions() {
+    public ApiResponse<QuestionDto> getAllQuestions() {
         List<QuestionDto> currentList = new ArrayList<>();
         for (QuestionDbo question : questionDboService.findAll()) {
             currentList.add(QuestionConverter.convertQuestion(question));
         }
-        return new ApiResponse(HttpStatus.OK.value(), "Questions got successfully.", currentList);
+
+        return new ApiResponse<QuestionDto>(HttpStatus.OK.value(), "Questions got successfully.", currentList.toArray(new QuestionDto[currentList.size()]));
 
     }
 
     @GetMapping(value = "/getAllCategories")
-    public ApiResponse getAllCategories() {
+    public ApiResponse<String> getAllCategories() {
         List<String> currentList = new ArrayList<>();
         for (Category category : categoryService.findAll()) {
             currentList.add(category.getName());
         }
-        return new ApiResponse(HttpStatus.OK.value(), "Questions got successfully.", currentList);
+        return new ApiResponse<String>(HttpStatus.OK.value(), "Questions got successfully.", currentList.toArray(new String[currentList.size()]));
     }
 
     @GetMapping(value = "/getRandomQuestions")
-    public ApiResponse getRandomQuestions() {
+    public List<QuestionDto> getRandomQuestions() {
         Set<Integer> randomNumbersSet = new HashSet<>();
         long currentCount = questionDboService.count();
         while (randomNumbersSet.size() < 10) {
@@ -56,11 +54,11 @@ public class QuestionController {
         for (Integer num : randomNumbersSet) {
             currentList.add(QuestionConverter.convertQuestion(questionDboService.findNecessary(num)));
         }
-        return new ApiResponse(HttpStatus.OK.value(), "Questions got successfully.", currentList);
+        return currentList;
     }
 
     @GetMapping(value = "/getRandomQuestions/{categoryName}")
-    public ApiResponse getRandomQuestionsByCategory(@PathVariable String categoryName) {
+    public ApiResponse<QuestionDto> getRandomQuestionsByCategory(@PathVariable String categoryName) {
         Set<Integer> randomNumbersSet = new HashSet<>();
         Category currentCategory = categoryService.findByName(categoryName);
         if (currentCategory != null) {
@@ -72,20 +70,20 @@ public class QuestionController {
             for (Integer num : randomNumbersSet) {
                 currentList.add(QuestionConverter.convertQuestion(questionDboService.findNecessaryFromCategory(currentCategory, num)));
             }
-            return new ApiResponse(HttpStatus.OK.value(), "Questions got successfully.", currentList);
+            return new ApiResponse<QuestionDto>(HttpStatus.OK.value(), "Questions got successfully.", currentList.toArray(new QuestionDto[currentList.size()]));
         } else {
-            return new ApiResponse(HttpStatus.BAD_REQUEST.value(), "Category hasn't been found.", "");
+            return new ApiResponse<QuestionDto>(HttpStatus.BAD_REQUEST.value(), "Category hasn't been found.", null);
         }
     }
 
     @PostMapping(value = "/add")
-    public ApiResponse addQuestion(@RequestBody QuestionDbo newQuestion) {
+    public ApiResponse<QuestionDbo> addQuestion(@RequestBody QuestionDbo newQuestion) {
         questionDboService.save(newQuestion);
-        return new ApiResponse(HttpStatus.OK.value(), "Question added successfully.", newQuestion);
+        return new ApiResponse<QuestionDbo>(HttpStatus.OK.value(), "Question added successfully.", new QuestionDbo[]{newQuestion});
     }
 
     @PostMapping(value = "/check")
-    public ApiResponse checkAnswers(@RequestBody List<AnswerDto> answers) {
+    public ApiResponse<Integer> checkAnswers(@RequestBody List<AnswerDto> answers) {
         int result = 0;
         int count = 0;
         for (AnswerDto answer : answers) {
@@ -95,7 +93,7 @@ public class QuestionController {
                 result++;
             }
         }
-        return new ApiResponse(HttpStatus.OK.value(), "Question added successfully.", count == 0 ? 0 : result / count);
+        return new ApiResponse<Integer>(HttpStatus.OK.value(), "Question added successfully.", new Integer[]{count == 0 ? 0 : result / count});
     }
 
     @DeleteMapping("/delete/{id}")
