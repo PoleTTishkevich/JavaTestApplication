@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Set;
 
 @Repository
 public interface QuestionDboRepository extends CrudRepository<QuestionDbo, Integer> {
@@ -21,4 +22,6 @@ public interface QuestionDboRepository extends CrudRepository<QuestionDbo, Integ
 
     @Query(value = "SELECT * FROM question WHERE category_id=:category_id LIMIT :limit,1", nativeQuery = true)
     QuestionDbo findNecessaryFromCategory(@Param("category_id") int categoryId, @Param("limit") int limit);
+
+    List<QuestionDbo> findAllByIdIn(Set<Integer> numbers);
 }

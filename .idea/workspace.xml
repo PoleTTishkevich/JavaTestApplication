@@ -2,27 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97db5688-66a5-42aa-b33b-65ef9fb160e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_xml_2_9_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_9_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_woodstox_woodstox_core_5_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_atteo_evo_inflector_1_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_woodstox_stax2_api_3_1_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_rest_2_1_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_rest_core_3_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_rest_webmvc_3_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_hateoas_spring_hateoas_0_25_0_RELEASE.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myjavatestapplication.iml" beforeDir="false" afterPath="$PROJECT_DIR$/myjavatestapplication.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/UserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/UserView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/controllers/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/controllers/QuestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/ApiResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/ApiResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/AdminView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/frontend/AdminView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/frontend/MainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/MessageBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/frontend/MessageBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/UserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/frontend/UserView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/QuestionDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/QuestionDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/repositories/QuestionDboRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/repositories/QuestionDboRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/service/QuestionDboService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/service/QuestionDboService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/service/QuestionDboServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/service/QuestionDboServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/utils/QuestionConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/utils/QuestionConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/UserView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/UserView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/AdminView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/MainView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/MessageBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/UserView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/configuration/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/configuration/WebSecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/controllers/QuestionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/controllers/QuestionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/entities/ApiResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/entities/ApiResponse.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/entities/QuestionDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/entities/QuestionDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/repositories/QuestionDboRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/repositories/QuestionDboRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/service/QuestionDboService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/service/QuestionDboService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/service/QuestionDboServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/service/QuestionDboServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/utils/QuestionConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/utils/QuestionConverter.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -47,66 +46,24 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/QuestionDbo.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/frontend/UserView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/UserAccount.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/UserRole.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="251">
+              <caret line="56" column="38" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/UserView.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/configuration/WebSecurityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/AnswerDto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/QuestionDto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="15" column="81" selection-start-line="15" selection-start-column="81" selection-end-line="15" selection-end-column="81" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/ApiResponse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="13" column="28" lean-forward="true" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+            <state relative-caret-position="248">
+              <caret line="27" column="80" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,10 +72,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/Category.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/frontend/MainView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            <state relative-caret-position="85">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/frontend/AdminView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/QuestionDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -126,8 +104,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/controllers/QuestionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="56" column="26" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+            <state relative-caret-position="255">
+              <caret line="23" column="5" selection-start-line="15" selection-start-column="4" selection-end-line="23" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/service/QuestionDboService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/service/QuestionDboServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1190">
+              <caret line="88" column="26" selection-start-line="88" selection-start-column="26" selection-end-line="88" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -138,8 +140,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/utils/QuestionConverter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="204">
+              <caret line="13" column="83" selection-start-line="13" selection-start-column="83" selection-end-line="13" selection-end-column="83" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/repositories/QuestionDboRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -162,15 +176,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/service/QuestionDboService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/AppRole.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/repositories/AppRoleRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/repositories/CategoryRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/repositories/QuestionDboRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/repositories/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/service/CategoryService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/service/CategoryServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/service/QuestionDboServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/service/UserDetailsServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/configuration/MvcConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/login.html" />
@@ -180,15 +191,20 @@
         <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/configuration/SwaggerConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/db/changelog/liquibase-changeLog.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/configuration/WebSecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/QuestionDbo.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/QuestionDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/AnswerDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/ApiResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/controllers/QuestionController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/utils/QuestionConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/service/QuestionDboService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/UserView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/frontend/MessageBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/repositories/QuestionDboRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/QuestionDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/utils/QuestionConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/service/QuestionDboServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/frontend/UserView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/configuration/WebSecurityConfig.java" />
       </list>
     </option>
   </component>
@@ -204,6 +220,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -253,7 +270,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="spring" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="myjavatestapplication" type="b2602c69:ProjectViewProjectNode" />
@@ -262,7 +279,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="spring" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
+              <item name="repositories" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="myjavatestapplication" type="b2602c69:ProjectViewProjectNode" />
@@ -341,7 +358,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -351,7 +367,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545845522969" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545851822636" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -396,7 +412,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1545743451371</updated>
-      <workItem from="1545743461915" duration="23050000" />
+      <workItem from="1545743461915" duration="29252000" />
+      <workItem from="1545856137070" duration="3703000" />
     </task>
     <task id="LOCAL-00001" summary="This is test project that test your knowledge of java&#10;&#10;Signed-off-by: PoleTT &lt;poltt@mail.ru&gt;">
       <created>1545762718773</created>
@@ -433,39 +450,46 @@
       <option name="project" value="LOCAL" />
       <updated>1545767178520</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="This is test project that test your knowledge of java&#10;&#10;Signed-off-by: PoleTT &lt;poltt@mail.ru&gt;">
+      <created>1545845653145</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1545845653145</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23050000" />
+    <option name="totallyTimeSpent" value="32955000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Designer" />
-      <window_info id="Image Layers" />
-      <window_info id="Capture Tool" />
-      <window_info id="UI Designer" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Web" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24886535" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27382752" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Spring" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32850242" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.50075644" side_tool="true" weight="0.34299517" />
-      <window_info anchor="bottom" id="Messages" weight="0.32921174" />
-      <window_info anchor="bottom" id="Java Enterprise" weight="0.32850242" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" weight="0.32850242" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.34299517" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.34299517" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32850242" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.34299517" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32921174" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32850242" />
+      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32850242" />
       <window_info anchor="right" id="Maven" order="0" />
       <window_info anchor="right" id="Palette" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
@@ -475,7 +499,7 @@
       <window_info anchor="right" id="Bean Validation" order="6" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="9" visible="true" weight="0.24962178" />
+      <window_info anchor="right" id="Ant Build" order="9" visible="true" weight="0.25189108" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -502,6 +526,20 @@
                 </list>
               </option>
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
           </value>
         </entry>
       </map>
@@ -546,16 +584,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/jquery-1.9.1.min.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/service/QuestionDboService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/AppRole.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
@@ -587,13 +615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/repositories/QuestionDboRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/repositories/UserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -615,13 +636,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/service/QuestionDboServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/utils/EncrytedPasswordUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
@@ -638,31 +652,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/messages.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="ResourceBundle" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/messages.properties" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
           <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/AdminView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/MainView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -695,16 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/configuration/WebSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="27" column="80" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/myrest.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -712,13 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="55" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/MessageBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -774,26 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/utils/QuestionConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/controllers/QuestionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="56" column="26" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/ApiResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -804,17 +761,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/QuestionDto.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/frontend/MessageBean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="15" column="81" selection-start-line="15" selection-start-column="81" selection-end-line="15" selection-end-column="81" />
+          <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/UserView.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/frontend/MainView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+        <state relative-caret-position="85">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/frontend/AdminView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/QuestionDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/controllers/QuestionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" column="5" selection-start-line="15" selection-start-column="4" selection-end-line="23" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/service/QuestionDboService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/service/QuestionDboServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="88" column="26" selection-start-line="88" selection-start-column="26" selection-end-line="88" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/utils/QuestionConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="13" column="83" selection-start-line="13" selection-start-column="83" selection-end-line="13" selection-end-column="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/repositories/QuestionDboRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/frontend/UserView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="56" column="38" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tishkevich/spring/configuration/WebSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="27" column="80" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -11,6 +11,6 @@ public class QuestionConverter {
         tmpList[1]=questionDbo.getSecondAnswer();
         tmpList[2]=questionDbo.getThirdAnswer();
         tmpList[3]=questionDbo.getForthAnswer();
-        return new QuestionDto(questionDbo.getId(), questionDbo.getQuestionText(), questionDbo.getCategory().getName(), tmpList);
+        return new QuestionDto(questionDbo.getId(), questionDbo.getQuestionText(), tmpList);
     }
 }

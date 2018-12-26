@@ -2,6 +2,7 @@ package com.tishkevich.spring.service;
 
 import com.tishkevich.spring.entities.Category;
 import com.tishkevich.spring.entities.QuestionDbo;
+import com.tishkevich.spring.entities.QuestionDto;
 
 import java.util.List;
 
@@ -9,6 +10,8 @@ public interface QuestionDboService {
     QuestionDbo save(QuestionDbo newQuestion);
 
     List<QuestionDbo> findAll();
+
+    List<QuestionDto> getRandomQuestions();
 
     void delete(int id);
 

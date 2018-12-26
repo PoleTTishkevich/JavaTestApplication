@@ -10,13 +10,13 @@ public class QuestionDto implements Serializable {
     private int id;
     private String questionText;
     private String[] answerList;
-    private String categoryName;
+    //private String categoryName;
 
 
-    public QuestionDto(int id, String questionText, String categoryName, String[] answerList) {
+    public QuestionDto(int id, String questionText, String[] answerList) {
         this.id = id;
         this.questionText = questionText;
-        this.categoryName = categoryName;
+        //this.categoryName = categoryName;
         this.answerList = answerList;
     }
 
