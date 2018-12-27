@@ -4,7 +4,7 @@ import com.tishkevich.spring.entities.QuestionDto;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.radiobutton.RadioButtonGroup;
@@ -28,14 +28,15 @@ public class UserView extends VerticalLayout {
         Tab[] tabList = new Tab[10];
         Div[] pageList = new Div[10];
         VerticalLayout[] layout = new VerticalLayout[10];
-        Span[] badge = new Span[10];
+
+        Paragraph[] badge = new Paragraph[10];
         RadioButtonGroup<String>[] group = new RadioButtonGroup[10];
         Map<Tab, Component> tabsToPages = new HashMap<>();
         List<QuestionDto> currentList = bean.getRandomQuestions();
         if (currentList != null) {
             tabList[0] = new Tab("Question 1");
             pageList[0] = new Div();
-            badge[0] = new Span(currentList.get(0).getQuestionText());
+            badge[0] = new Paragraph(currentList.get(0).getQuestionText());
             badge[0].getStyle().set("fontSize", "100%");
 
             group[0] = new RadioButtonGroup<>();
@@ -47,7 +48,7 @@ public class UserView extends VerticalLayout {
             for (int i = 1; i <= 9; i++) {
                 tabList[i] = new Tab("Question " + (i + 1));
                 pageList[i] = new Div();
-                badge[i] = new Span(currentList.get(i).getQuestionText());
+                badge[i] = new Paragraph(currentList.get(i).getQuestionText());
                 badge[i].getStyle().set("fontSize", "100%");
                 pageList[i].setVisible(false);
                 group[i] = new RadioButtonGroup<>();
