@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97db5688-66a5-42aa-b33b-65ef9fb160e7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/frontend/UserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/frontend/UserView.java" afterDir="false" />
-    </list>
+    <list default="true" id="97db5688-66a5-42aa-b33b-65ef9fb160e7" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -401,7 +398,7 @@
       <updated>1545743451371</updated>
       <workItem from="1545743461915" duration="29252000" />
       <workItem from="1545856137070" duration="4092000" />
-      <workItem from="1545919851671" duration="3895000" />
+      <workItem from="1545919851671" duration="4097000" />
     </task>
     <task id="LOCAL-00001" summary="This is test project that test your knowledge of java&#10;&#10;Signed-off-by: PoleTT &lt;poltt@mail.ru&gt;">
       <created>1545762718773</created>
@@ -459,15 +456,21 @@
       <option name="project" value="LOCAL" />
       <updated>1545860908905</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="This is test project that test your knowledge of java&#10;&#10;Signed-off-by: PoleTT &lt;poltt@mail.ru&gt;">
+      <created>1545933728362</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1545933728363</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37239000" />
+    <option name="totallyTimeSpent" value="37441000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1380" height="780" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28484848" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -479,7 +482,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.32921174" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.32921174" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
