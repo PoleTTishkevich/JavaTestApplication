@@ -1,27 +1,44 @@
 package com.tishkevich.spring.controllers;
 
-import com.tishkevich.spring.entities.*;
+import com.tishkevich.spring.entities.AnswerDto;
+import com.tishkevich.spring.entities.ApiResponse;
+import com.tishkevich.spring.entities.Category;
+import com.tishkevich.spring.entities.QuestionDbo;
+import com.tishkevich.spring.entities.QuestionDto;
+import com.tishkevich.spring.entities.ResultEntity;
 import com.tishkevich.spring.service.CategoryService;
 import com.tishkevich.spring.service.QuestionDboService;
+import com.tishkevich.spring.service.ResultService;
 import com.tishkevich.spring.utils.QuestionConverter;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.*;
+import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api")
+@AllArgsConstructor
 public class QuestionController {
+
     private final QuestionDboService questionDboService;
 
     private final CategoryService categoryService;
 
-    @Autowired
-    public QuestionController(QuestionDboService questionDboService, CategoryService categoryService) {
-        this.questionDboService = questionDboService;
-        this.categoryService = categoryService;
-    }
+    private final ResultService resultService;
+
+    private final ObjectFactory<HttpSession> httpSessionFactory;
 
     @GetMapping(value = "/getAllQuestions")
     public ApiResponse<QuestionDto> getAllQuestions() {
@@ -93,7 +110,12 @@ public class QuestionController {
                 result++;
             }
         }
-        return new ApiResponse<Integer>(HttpStatus.OK.value(), "Question added successfully.", new Integer[]{count == 0 ? 0 : result * 10 / count});
+        final String username = (String) httpSessionFactory.getObject().getAttribute("username");
+        if (resultService.saveResult(username, result) != null){
+            return new ApiResponse<Integer>(HttpStatus.OK.value(), "Question added successfully.", new Integer[]{count == 0 ? 0 : result * 10 / count});
+        }
+        return new ApiResponse<Integer>(HttpStatus.BAD_REQUEST.value(), "Results saving problem", null);
+
     }
 
     @DeleteMapping("/delete/{id}")
