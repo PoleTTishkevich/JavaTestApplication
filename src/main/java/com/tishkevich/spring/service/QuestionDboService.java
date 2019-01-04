@@ -1,15 +1,17 @@
 package com.tishkevich.spring.service;
 
+import com.tishkevich.spring.entities.AnswerDto;
 import com.tishkevich.spring.entities.Category;
 import com.tishkevich.spring.entities.QuestionDbo;
 import com.tishkevich.spring.entities.QuestionDto;
 
 import java.util.List;
+import java.util.Set;
 
 public interface QuestionDboService {
     QuestionDbo save(QuestionDbo newQuestion);
 
-    List<QuestionDbo> findAll();
+    List<QuestionDto> findAll();
 
     List<QuestionDto> getRandomQuestions();
 
@@ -25,7 +27,9 @@ public interface QuestionDboService {
 
     long count();
 
-    QuestionDbo findNecessary(int limit);
+    List<QuestionDbo> findNecessary(int limit);
 
-    QuestionDbo findNecessaryFromCategory(Category category, int limit);
+    List<QuestionDto> findNecessaryFromCategory(Category category, int limit);
+
+    Integer checkAnswers(List<AnswerDto> answers);
 }

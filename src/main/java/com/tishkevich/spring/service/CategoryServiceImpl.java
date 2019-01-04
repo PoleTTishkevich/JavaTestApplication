@@ -20,10 +20,14 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public List<Category> findAll() {
+    public List<String> findAll() {
         List<Category> tmpList = new ArrayList<>();
         categoryRepository.findAll().iterator().forEachRemaining(tmpList::add);
-        return tmpList;
+        List<String> newList = new ArrayList<>();
+        for (Category category : tmpList) {
+            newList.add(category.getName());
+        }
+        return newList;
     }
 
     @Override

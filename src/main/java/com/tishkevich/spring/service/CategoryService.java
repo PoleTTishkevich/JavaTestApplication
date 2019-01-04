@@ -5,7 +5,7 @@ import com.tishkevich.spring.entities.Category;
 import java.util.List;
 
 public interface CategoryService {
-    List<Category> findAll();
+    List<String> findAll();
     Category findById(final int id);
     Category findByName(String categoryName);
 

@@ -5,7 +5,7 @@ import com.tishkevich.spring.entities.QuestionDto;
 
 public class QuestionConverter {
 
-    public static QuestionDto convertQuestion(QuestionDbo questionDbo){
+    public static QuestionDto convertQuestionToDto(QuestionDbo questionDbo){
         String[] tmpList = new String[4];
         tmpList[0]=questionDbo.getFirstAnswer();
         tmpList[1]=questionDbo.getSecondAnswer();
