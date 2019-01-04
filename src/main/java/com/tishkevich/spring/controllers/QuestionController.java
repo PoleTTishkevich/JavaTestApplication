@@ -93,7 +93,7 @@ public class QuestionController {
                 result++;
             }
         }
-        return new ApiResponse<Integer>(HttpStatus.OK.value(), "Question added successfully.", new Integer[]{count == 0 ? 0 : result / count});
+        return new ApiResponse<Integer>(HttpStatus.OK.value(), "Question added successfully.", new Integer[]{count == 0 ? 0 : result * 10 / count});
     }
 
     @DeleteMapping("/delete/{id}")
