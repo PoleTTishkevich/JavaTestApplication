@@ -1,14 +1,16 @@
 package com.tishkevich.spring.service;
 
-import com.tishkevich.spring.entities.Category;
-import com.tishkevich.spring.entities.QuestionDbo;
-import com.tishkevich.spring.entities.QuestionDto;
+import com.tishkevich.spring.entities.*;
 import com.tishkevich.spring.repositories.QuestionDboRepository;
 import com.tishkevich.spring.utils.QuestionConverter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service(value = "questionService")
 public class QuestionDboServiceImpl implements QuestionDboService {
@@ -26,10 +28,14 @@ public class QuestionDboServiceImpl implements QuestionDboService {
     }
 
     @Override
-    public List<QuestionDbo> findAll() {
+    public List<QuestionDto> findAll() {
         List<QuestionDbo> list = new ArrayList<>();
         questionDboRepository.findAll().iterator().forEachRemaining(list::add);
-        return list;
+        List<QuestionDto> newList = new ArrayList<>();
+        for (QuestionDbo question : list) {
+            newList.add(QuestionConverter.convertQuestionToDto(question));
+        }
+        return newList;
     }
 
     @Override
@@ -61,13 +67,26 @@ public class QuestionDboServiceImpl implements QuestionDboService {
     }
 
     @Override
-    public QuestionDbo findNecessaryFromCategory(Category category, int limit){
-        return questionDboRepository.findNecessaryFromCategory(category.getId(), limit);
+    public List<QuestionDto> findNecessaryFromCategory(Category category, int limit){
+        int count = (int)questionDboRepository.countByCategory(category);
+        long startNumber = new Random().nextInt((count-limit));
+        List<QuestionDbo> list = questionDboRepository.findAllByCategory(category.getId(), startNumber);
+        List<QuestionDto> newList = new ArrayList<>();
+        for (QuestionDbo question : list) {
+            newList.add(QuestionConverter.convertQuestionToDto(question));
+        }
+        return newList;
     }
 
     @Override
-    public QuestionDbo findNecessary(int limit){
-        return questionDboRepository.findNecessary(limit);
+    public List<QuestionDbo> findNecessary(int limit){
+        List<Integer> arr = new ArrayList<>();
+        int max = (int)count();
+        while (arr.size() < limit){
+            arr.add(new Random().nextInt((max - 1) + 1) + 1);
+        }
+        Integer[] mas = arr.toArray(new Integer[arr.size()]);
+        return questionDboRepository.findNecessary(mas);
     }
 
     @Override
@@ -77,15 +96,25 @@ public class QuestionDboServiceImpl implements QuestionDboService {
 
     @Override
     public List<QuestionDto> getRandomQuestions() {
-        Set<Integer> randomNumbersSet = new HashSet<>();
-        long currentCount = questionDboRepository.count();
-        while (randomNumbersSet.size() < 10) {
-            randomNumbersSet.add((int) (Math.random() * currentCount));
+        List<QuestionDbo> list = findNecessary(10);
+        List<QuestionDto> newList = new ArrayList<>();
+        for (QuestionDbo question : list) {
+            newList.add(QuestionConverter.convertQuestionToDto(question));
         }
-        List<QuestionDto> currentList = new ArrayList<>();
-        for (Integer num : randomNumbersSet) {
-            currentList.add(QuestionConverter.convertQuestion(questionDboRepository.findNecessary(num)));
+        return newList;
+    }
+
+    @Override
+    public Integer checkAnswers(final List<AnswerDto> answers) {
+        int result = 0;
+        int count = 0;
+        for (AnswerDto answer : answers) {
+            count++;
+            QuestionDbo tmpQuestion = questionDboRepository.findById(answer.getId()).orElse(null);
+            if (answer.getAnswerNumber() == tmpQuestion.getCorrectAnswerNumber()) {
+                result++;
+            }
         }
-        return currentList;
+        return count == 0 ? 0 : result / count;
     }
 }

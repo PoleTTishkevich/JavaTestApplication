@@ -2,6 +2,8 @@ package com.tishkevich.spring.repositories;
 
 import com.tishkevich.spring.entities.Category;
 import com.tishkevich.spring.entities.QuestionDbo;
+import com.tishkevich.spring.entities.QuestionDto;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -17,11 +19,12 @@ public interface QuestionDboRepository extends CrudRepository<QuestionDbo, Integ
 
     long countByCategory(Category category);
 
-    @Query(value = "SELECT * FROM question LIMIT :limit,1", nativeQuery = true)
-    QuestionDbo findNecessary(@Param("limit") int limit);
-
-    @Query(value = "SELECT * FROM question WHERE category_id=:category_id LIMIT :limit,1", nativeQuery = true)
-    QuestionDbo findNecessaryFromCategory(@Param("category_id") int categoryId, @Param("limit") int limit);
+    @Query(value = "select q from QuestionDbo q where q.id in (:idOfSelectedRows) order by q.id, 1")
+    List<QuestionDbo> findNecessary(@Param("idOfSelectedRows") Integer[] idOfSelectedRows);
 
     List<QuestionDbo> findAllByIdIn(Set<Integer> numbers);
+
+    @Query(value = "select * from question where category_id =:categoryId LIMIT :startPosition, 10", nativeQuery = true)
+    List<QuestionDbo> findAllByCategory (@Param("categoryId")int categoryId, @Param("startPosition") Long startPosition);
+
 }
