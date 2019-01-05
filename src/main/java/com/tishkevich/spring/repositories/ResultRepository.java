@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface ResultRepository extends JpaRepository<ResultEntity, String> {
 
-    List<ResultEntity> findAllByUsername(String username);
+    List<ResultEntity> getAllByUsername(String username);
 }

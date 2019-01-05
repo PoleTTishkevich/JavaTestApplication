@@ -5,6 +5,7 @@ import com.tishkevich.spring.entities.ApiResponse;
 import com.tishkevich.spring.entities.Category;
 import com.tishkevich.spring.entities.QuestionDbo;
 import com.tishkevich.spring.entities.QuestionDto;
+import com.tishkevich.spring.entities.ResultDto;
 import com.tishkevich.spring.entities.ResultEntity;
 import com.tishkevich.spring.service.CategoryService;
 import com.tishkevich.spring.service.QuestionDboService;
@@ -114,8 +115,15 @@ public class QuestionController {
         if (resultService.saveResult(username, result) != null){
             return new ApiResponse<Integer>(HttpStatus.OK.value(), "Question added successfully.", new Integer[]{count == 0 ? 0 : result * 10 / count});
         }
-        return new ApiResponse<Integer>(HttpStatus.BAD_REQUEST.value(), "Results saving problem", null);
+        return new ApiResponse<Integer>(HttpStatus.BAD_REQUEST.value(), "Results were not saved", null);
 
+    }
+
+    @GetMapping(value = "/results")
+    public ApiResponse getResultsByUsername(){
+        final String username = (String) httpSessionFactory.getObject().getAttribute("username");
+        final List<ResultDto> resultList = resultService.getAllByUsername(username);
+        return new ApiResponse<ResultDto>(HttpStatus.OK.value(), "Results recieved", resultList.toArray(new ResultDto[resultList.size()]));
     }
 
     @DeleteMapping("/delete/{id}")
