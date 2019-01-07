@@ -17,42 +17,49 @@ import java.util.List;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
-	private final UserRepository userRepository;
-	
-	private final AppRoleRepository appRoleRepository;
+    private final UserRepository userRepository;
 
-	@Autowired
-	public UserDetailsServiceImpl(UserRepository userRepository, AppRoleRepository appRoleRepository) {
-		this.userRepository = userRepository;
-		this.appRoleRepository = appRoleRepository;
-	}
+    private final AppRoleRepository appRoleRepository;
 
-	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		UserAccount appUser = this.userRepository.findByUsername(username);
+    @Autowired
+    public UserDetailsServiceImpl(UserRepository userRepository, AppRoleRepository appRoleRepository) {
+        this.userRepository = userRepository;
+        this.appRoleRepository = appRoleRepository;
+    }
 
-		if (appUser == null) {
-			System.out.println("User not found! " + username);
-			throw new UsernameNotFoundException("User " + username + " was not found in the database");
-		}
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        UserAccount appUser = this.userRepository.findByUsername(username);
 
-		System.out.println("Found User: " + appUser);
+        if (appUser == null) {
+            System.out.println("User not found! " + username);
+            throw new UsernameNotFoundException("User " + username + " was not found in the database");
+        }
 
-		// [ROLE_USER, ROLE_ADMIN,..]
-		List<String> roleNames = this.appRoleRepository.getRoleNames(appUser.getId());
+        System.out.println("Found User: " + appUser);
 
-		List<GrantedAuthority> grantList = new ArrayList<>();
-		if (roleNames != null) {
-			for (String role : roleNames) {
-				// ROLE_USER, ROLE_ADMIN,..
-				System.out.println(role);
-				GrantedAuthority authority = new SimpleGrantedAuthority(role);
-				grantList.add(authority);
-			}
-		}
+        // [ROLE_USER, ROLE_ADMIN,..]
+        List<String> roleNames = this.appRoleRepository.getRoleNames(appUser.getId());
 
-		return new User(appUser.getUsername(), //
-				appUser.getPassword(), grantList);
-	}
+        List<GrantedAuthority> grantList = new ArrayList<>();
+        if (roleNames != null) {
+            for (String role : roleNames) {
+                // ROLE_USER, ROLE_ADMIN,..
+                System.out.println(role);
+                GrantedAuthority authority = new SimpleGrantedAuthority(role);
+                grantList.add(authority);
+            }
+        }
 
+        return new User(appUser.getUsername(), //
+                appUser.getPassword(), grantList);
+    }
+
+    public long count() {
+        return userRepository.count();
+    }
+
+    public List<UserAccount> findAllWithLimit(Long startPosition, int count) {
+        return userRepository.findAllWithLimit(startPosition, count);
+    }
 }

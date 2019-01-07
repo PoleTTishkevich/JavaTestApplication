@@ -32,4 +32,9 @@ public interface QuestionDboService {
     List<QuestionDto> findNecessaryFromCategory(Category category, int limit);
 
     Integer checkAnswers(List<AnswerDto> answers);
+
+    List<QuestionDbo> findAllWithLimit(Long startPosition, int count);
+
+    List<QuestionDbo> findAllByCategoryWithLimit(int categoryId, Long startPosition, int count);
+
 }
