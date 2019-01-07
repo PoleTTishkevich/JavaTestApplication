@@ -27,4 +27,11 @@ public interface QuestionDboRepository extends CrudRepository<QuestionDbo, Integ
     @Query(value = "select * from question where category_id =:categoryId LIMIT :startPosition, 10", nativeQuery = true)
     List<QuestionDbo> findAllByCategory (@Param("categoryId")int categoryId, @Param("startPosition") Long startPosition);
 
+    @Query(value = "select * from question LIMIT :startPosition, :count", nativeQuery = true)
+    List<QuestionDbo> findAllWithLimit (@Param("startPosition") Long startPosition, @Param("count") int count);
+
+    @Query(value = "select * from question where category_id =:categoryId LIMIT :startPosition, :count", nativeQuery = true)
+    List<QuestionDbo> findAllByCategoryWithLimit (@Param("categoryId")int categoryId, @Param("startPosition") Long startPosition, @Param("count") int count);
+
+
 }
