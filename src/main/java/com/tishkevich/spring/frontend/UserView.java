@@ -1,84 +1,97 @@
 package com.tishkevich.spring.frontend;
 
+import com.tishkevich.spring.entities.Category;
 import com.tishkevich.spring.entities.QuestionDto;
-import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.Paragraph;
-import com.vaadin.flow.component.notification.Notification;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.radiobutton.RadioButtonGroup;
-import com.vaadin.flow.component.tabs.Tab;
-import com.vaadin.flow.component.tabs.Tabs;
-import com.vaadin.flow.router.Route;
+import com.tishkevich.spring.service.CategoryService;
+import com.tishkevich.spring.service.QuestionDboService;
+import com.tishkevich.spring.service.UserDetailsServiceImpl;
+import com.vaadin.annotations.Theme;
+import com.vaadin.navigator.View;
+import com.vaadin.navigator.ViewDisplay;
+import com.vaadin.server.Sizeable;
+import com.vaadin.server.VaadinRequest;
+import com.vaadin.spring.annotation.SpringUI;
+import com.vaadin.spring.annotation.SpringViewDisplay;
+import com.vaadin.ui.*;
+import com.vaadin.ui.themes.ValoTheme;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-@Route("user")
-public class UserView extends VerticalLayout {
+//@Route("user")
+@SpringUI
+@Theme("valo")
+@SpringViewDisplay
+public class UserView extends UI implements ViewDisplay {
 
+    private Panel springViewDisplay;
 
-    public UserView(@Autowired MessageBean bean) {
-        Tab[] tabList = new Tab[10];
-        Div[] pageList = new Div[10];
-        VerticalLayout[] layout = new VerticalLayout[10];
+    @Autowired
+    private QuestionDboService questionDboService;
+    @Autowired
+    private UserDetailsServiceImpl userDetailsService;
+    @Autowired
+    private CategoryService categoryService;
 
-        Paragraph[] badge = new Paragraph[10];
-        RadioButtonGroup<String>[] group = new RadioButtonGroup[10];
-        Map<Tab, Component> tabsToPages = new HashMap<>();
-        List<QuestionDto> currentList = bean.getRandomQuestions();
-        if (currentList != null) {
-            tabList[0] = new Tab("Question 1");
-            pageList[0] = new Div();
-            badge[0] = new Paragraph(currentList.get(0).getQuestionText());
-            badge[0].getStyle().set("fontSize", "100%");
-
-            group[0] = new RadioButtonGroup<>();
-            group[0].setItems("1. " + currentList.get(0).getAnswerList()[0], "2. " + currentList.get(0).getAnswerList()[1], "3. " + currentList.get(0).getAnswerList()[2], "4. " + currentList.get(0).getAnswerList()[3]);
-            layout[0] = new VerticalLayout(badge[0], group[0]);
-            layout[0].getStyle().set("alignItems", "center");
-            pageList[0].add(layout[0]);
-            tabsToPages.put(tabList[0], pageList[0]);
-            for (int i = 1; i <= 9; i++) {
-                tabList[i] = new Tab("Question " + (i + 1));
-                pageList[i] = new Div();
-                badge[i] = new Paragraph(currentList.get(i).getQuestionText());
-                badge[i].getStyle().set("fontSize", "100%");
-                pageList[i].setVisible(false);
-                group[i] = new RadioButtonGroup<>();
-                group[i].setItems("1. " + currentList.get(i).getAnswerList()[0], "2. " + currentList.get(i).getAnswerList()[1], "3. " + currentList.get(i).getAnswerList()[2], "4. " + currentList.get(i).getAnswerList()[3]);
-                layout[i] = new VerticalLayout(badge[i], group[i]);
-                layout[i].getStyle().set("alignItems", "center");
-                pageList[i].add(layout[i]);
-                tabsToPages.put(tabList[i], pageList[i]);
+    @Override
+    protected void init(VaadinRequest vaadinRequest) {
+        //fixme add method, that checks user's role
+        UserDetails userDetails = userDetailsService.loadUserByUsername(vaadinRequest.getUserPrincipal().getName());
+        boolean isAdmin = false;
+        for (GrantedAuthority authority : userDetails.getAuthorities()) {
+            if (authority.getAuthority().equals("ROLE_ADMIN")) {
+                isAdmin = true;
             }
-
-
         }
-        Tabs tabs = new Tabs(tabList[0], tabList[1], tabList[2], tabList[3], tabList[4], tabList[5], tabList[6], tabList[7], tabList[8], tabList[9]);
 
-        Div pages = new Div(pageList[0], pageList[1], pageList[2], pageList[3], pageList[4], pageList[5], pageList[6], pageList[7], pageList[8], pageList[9]);
-        Set<Component> pagesShown = Stream.of(pageList[0])
-                .collect(Collectors.toSet());
-        tabs.addSelectedChangeListener(event -> {
-            pagesShown.forEach(tpage -> tpage.setVisible(false));
-            pagesShown.clear();
-            Component selectedPage = tabsToPages.get(tabs.getSelectedTab());
-            selectedPage.setVisible(true);
-            pagesShown.add(selectedPage);
-        });
-        tabs.setFlexGrowForEnclosedTabs(1);
-        add(tabs);
-        add(pages);
-        Button button = new Button("User, click me",
-                e -> Notification.show(bean.getMessage()));
-        //add(button);
+        System.out.println(isAdmin);
+        final VerticalLayout root = new VerticalLayout();
+        root.setSizeFull();
+        setContent(root);
+        Label label = new Label("Hello, " + vaadinRequest.getUserPrincipal().getName() + ", choose the difficulty of questions");
+        List<Category> data = categoryService.findAll();
+
+        RadioButtonGroup<Category> sample = new RadioButtonGroup<>("Select the difficulty", data);
+        sample.setItemCaptionGenerator(item -> item.getName());
+        sample.setSelectedItem(data.get(0));
+        sample.setSizeFull();
+        sample.setHeightUndefined();
+        sample.addStyleName(ValoTheme.OPTIONGROUP_HORIZONTAL);
+        sample.addValueChangeListener(event -> Notification.show("Value changed:",
+                String.valueOf(event.getValue()),
+                Notification.Type.TRAY_NOTIFICATION));
+        root.addComponent(label);
+        root.addComponent(sample);
+        root.setExpandRatio(label, 1.0f);
+        root.setExpandRatio(sample, 1.0f);
+        TabSheet tabsheet = new TabSheet();
+        root.addComponent(tabsheet);
+        root.setExpandRatio(tabsheet, 10.0f);
+        List<QuestionDto> currentList = questionDboService.getRandomQuestions();
+        for (int i = 0; i < 10; i++) {
+            VerticalLayout tab1 = new VerticalLayout();
+            String text = currentList.get(i).getQuestionText();
+            int rowNums = text.split("\n").length;
+            TextArea curentText = new TextArea("", text);
+            curentText.setSizeFull();
+            curentText.setRows(rowNums);
+            curentText.setEnabled(false);
+            tab1.addComponent(curentText);
+            tabsheet.addTab(tab1, "question " + (i + 1));
+        }
+        springViewDisplay = new Panel();
+        springViewDisplay.setSizeFull();
+        springViewDisplay.setVisible(false);
+        root.addComponent(springViewDisplay);
+        root.setExpandRatio(springViewDisplay, 1.0f);
+
     }
 
+    @Override
+    public void showView(View view) {
+        springViewDisplay.setContent((Component) view);
+
+    }
 }
