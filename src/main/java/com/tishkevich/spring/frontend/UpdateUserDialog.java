@@ -1,6 +1,7 @@
 package com.tishkevich.spring.frontend;
 
 import com.tishkevich.spring.entities.UserAccount;
+import com.tishkevich.spring.repositories.UserRepository;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
@@ -8,7 +9,7 @@ import com.vaadin.ui.Window;
 
 public class UpdateUserDialog extends Window {
 
-    public UpdateUserDialog(final UserAccount userAccount) {
+    public UpdateUserDialog(final UserAccount userAccount, UserRepository userRepository) {
         super("Update user account"); // Set window caption
         center();
         setModal(true);
@@ -21,6 +22,7 @@ public class UpdateUserDialog extends Window {
                 System.out.println("password: " + password.getValue().trim());
                 userAccount.setPassword(password.getValue());
             }
+            userRepository.save(userAccount);
             close();
         }), new Button("Cancel", event -> close()));
         setContent(layout);

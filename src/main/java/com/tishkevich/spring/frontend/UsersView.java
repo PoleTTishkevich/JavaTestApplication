@@ -60,7 +60,7 @@ public class UsersView extends VerticalLayout implements View {
         Button modifyPersonButton = new Button("Modify user account",
                 clickEvent -> {
                     final UserAccount personToChange = grid.getSelectionModel().getFirstSelectedItem().get();
-                    UpdateUserDialog updateUserDialog = new UpdateUserDialog(personToChange);
+                    UpdateUserDialog updateUserDialog = new UpdateUserDialog(personToChange, userRepository);
                     updateUserDialog.setHeight("400px");
                     updateUserDialog.setWidth("400px");
 
@@ -68,9 +68,9 @@ public class UsersView extends VerticalLayout implements View {
                     updateUserDialog.setPositionX(200);
                     updateUserDialog.setPositionY(50);
                     UI.getCurrent().addWindow(updateUserDialog);
-                    System.out.println(personToChange.getId());
-                    System.out.println(personToChange.getUsername());
-                    System.out.println(personToChange.getPassword());
+                    UserAccount tmp = userRepository.findById(personToChange.getId()).get();
+                    personToChange.setUsername(tmp.getUsername());
+                    personToChange.setPassword(tmp.getPassword());
                     userRepository.save(personToChange);
                     grid.getSelectionModel().deselectAll();
                     dataProvider.refreshAll();
