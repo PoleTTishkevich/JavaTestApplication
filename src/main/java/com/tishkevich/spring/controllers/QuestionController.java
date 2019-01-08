@@ -1,12 +1,6 @@
 package com.tishkevich.spring.controllers;
 
-import com.tishkevich.spring.entities.AnswerDto;
-import com.tishkevich.spring.entities.ApiResponse;
-import com.tishkevich.spring.entities.Category;
-import com.tishkevich.spring.entities.QuestionDbo;
-import com.tishkevich.spring.entities.QuestionDto;
-import com.tishkevich.spring.entities.ResultDto;
-import com.tishkevich.spring.entities.ResultEntity;
+import com.tishkevich.spring.entities.*;
 import com.tishkevich.spring.service.CategoryService;
 import com.tishkevich.spring.service.QuestionDboService;
 import com.tishkevich.spring.service.ResultService;
@@ -14,13 +8,7 @@ import com.tishkevich.spring.utils.QuestionConverter;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
@@ -111,7 +99,7 @@ public class QuestionController {
                 result++;
             }
         }
-        final String username = (String) httpSessionFactory.getObject().getAttribute("username");
+        final String username = "User";
         if (resultService.saveResult(username, result) != null){
             return new ApiResponse<Integer>(HttpStatus.OK.value(), "Question added successfully.", new Integer[]{count == 0 ? 0 : result * 10 / count});
         }
@@ -121,7 +109,7 @@ public class QuestionController {
 
     @GetMapping(value = "/results")
     public ApiResponse getResultsByUsername(){
-        final String username = (String) httpSessionFactory.getObject().getAttribute("username");
+        final String username = "User";
         final List<ResultDto> resultList = resultService.getAllByUsername(username);
         return new ApiResponse<ResultDto>(HttpStatus.OK.value(), "Results recieved", resultList.toArray(new ResultDto[resultList.size()]));
     }

@@ -259,10 +259,12 @@ ALTER TABLE `user_role`
 
 
 CREATE TABLE `result` (
-  `username` varchar(36) NOT NULL,
-  `result_value` int UNSIGNED NOT NULL ,
-  `date` datetime NOT NULL
-  ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(36) NOT NULL,
+  `result_value` INT UNSIGNED NOT NULL,
+  `date` DATETIME NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = MyISAM DEFAULT CHARACTER SET = utf8;
 
 
 INSERT INTO `result` (`username`, `result_value`, `date`)

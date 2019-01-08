@@ -1,16 +1,10 @@
 package com.tishkevich.spring.entities;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Type;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import java.io.Serializable;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Data
@@ -20,6 +14,10 @@ import java.time.LocalDate;
 public class ResultEntity{
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
+    private Long id;
+
     @Column(name = "username", nullable = false, length = 36)
     private String username;
 

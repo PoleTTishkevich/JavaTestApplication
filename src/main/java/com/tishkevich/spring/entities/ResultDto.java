@@ -11,6 +11,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class ResultDto implements Serializable {
 
+    private Long id;
+
     private String username;
 
     private Integer resultValue;
