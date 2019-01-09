@@ -18,14 +18,14 @@ public class UpdateUserDialog extends Window {
         TextField username = new TextField("Username: ");
         TextField password = new TextField("Password: ");
         // Shorthand for cases without extra configuration
-        binder.readBean(userAccount);
+
         binder.bind(username, UserAccount::getUsername, UserAccount::setUsername);
         binder.bind(password, UserAccount::getPassword, UserAccount::setPassword);
+        binder.readBean(userAccount);
         layout.addComponents(username, password, new Button("Submit", event -> {
             try {
                 binder.writeBean(userAccount);
-                // A real application would also save the updated person
-                // using the application's backend
+                userRepository.save(userAccount);
             } catch (ValidationException e) {
                 Notification.show("Person could not be saved, " +
                         "please check error messages for each field.");
