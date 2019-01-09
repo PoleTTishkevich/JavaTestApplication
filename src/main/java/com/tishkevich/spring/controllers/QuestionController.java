@@ -44,11 +44,7 @@ public class QuestionController {
 
     @GetMapping(value = "/getAllQuestions")
     public ApiResponse<QuestionDto> getAllQuestions() {
-        List<QuestionDto> currentList = new ArrayList<>();
-        for (QuestionDbo question : questionDboService.findAll()) {
-            currentList.add(QuestionConverter.convertQuestion(question));
-        }
-
+        List<QuestionDto> currentList = questionDboService.findAll();
         return new ApiResponse<QuestionDto>(HttpStatus.OK.value(), "Questions got successfully.", currentList.toArray(new QuestionDto[currentList.size()]));
 
     }
@@ -56,8 +52,8 @@ public class QuestionController {
     @GetMapping(value = "/getAllCategories")
     public ApiResponse<String> getAllCategories() {
         List<String> currentList = new ArrayList<>();
-        for (Category category : categoryService.findAll()) {
-            currentList.add(category.getName());
+        for (String category : categoryService.findAll()) {
+            currentList.add(category);
         }
         return new ApiResponse<String>(HttpStatus.OK.value(), "Questions got successfully.", currentList.toArray(new String[currentList.size()]));
     }
@@ -71,7 +67,7 @@ public class QuestionController {
         }
         List<QuestionDto> currentList = new ArrayList<>();
         for (Integer num : randomNumbersSet) {
-            currentList.add(QuestionConverter.convertQuestion(questionDboService.findNecessary(num)));
+            currentList.add(QuestionConverter.convertQuestionToDto(questionDboService.findNecessary(num).get(0)));
         }
         return currentList;
     }
@@ -87,7 +83,7 @@ public class QuestionController {
             }
             List<QuestionDto> currentList = new ArrayList<>();
             for (Integer num : randomNumbersSet) {
-                currentList.add(QuestionConverter.convertQuestion(questionDboService.findNecessaryFromCategory(currentCategory, num)));
+                currentList.add(questionDboService.findNecessaryFromCategory(currentCategory, num).get(0));
             }
             return new ApiResponse<QuestionDto>(HttpStatus.OK.value(), "Questions got successfully.", currentList.toArray(new QuestionDto[currentList.size()]));
         } else {
@@ -113,7 +109,7 @@ public class QuestionController {
             }
         }
         final String username = (String) httpSessionFactory.getObject().getAttribute("username");
-        if (resultService.saveResult(username, result) != null){
+        if (resultService.saveResult(username, result) != null) {
             return new ApiResponse<Integer>(HttpStatus.OK.value(), "Question added successfully.", new Integer[]{count == 0 ? 0 : result * 10 / count});
         }
         return new ApiResponse<Integer>(HttpStatus.BAD_REQUEST.value(), "Results were not saved", null);
@@ -121,7 +117,7 @@ public class QuestionController {
     }
 
     @GetMapping(value = "/results")
-    public ApiResponse getResultsByUsername(){
+    public ApiResponse getResultsByUsername() {
         final String username = (String) httpSessionFactory.getObject().getAttribute("username");
         final List<ResultDto> resultList = resultService.getAllByUsername(username);
         return new ApiResponse<ResultDto>(HttpStatus.OK.value(), "Results recieved", resultList.toArray(new ResultDto[resultList.size()]));
