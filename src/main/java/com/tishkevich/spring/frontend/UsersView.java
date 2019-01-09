@@ -52,26 +52,35 @@ public class UsersView extends VerticalLayout implements View {
                     UserAccount tmpAcc = new UserAccount();
                     tmpAcc.setUsername("New user");
                     tmpAcc.setPassword("new password");
-                    tmpAcc = userRepository.save(tmpAcc);
-
-                    dataProvider.refreshAll();
-                });
-
-        Button modifyPersonButton = new Button("Modify user account",
-                clickEvent -> {
-                    final UserAccount personToChange = grid.getSelectionModel().getFirstSelectedItem().get();
-                    UpdateUserDialog updateUserDialog = new UpdateUserDialog(personToChange, userRepository);
+                    //tmpAcc = userRepository.save(tmpAcc);
+                    UpdateUserDialog updateUserDialog = new UpdateUserDialog("Create new user account", tmpAcc, userRepository);
                     updateUserDialog.setHeight("400px");
                     updateUserDialog.setWidth("400px");
 
                     // Set window position.
                     updateUserDialog.setPositionX(200);
                     updateUserDialog.setPositionY(50);
+                    updateUserDialog.addCloseListener(closeEvent -> {
+                        dataProvider.refreshAll();
+                    });
                     UI.getCurrent().addWindow(updateUserDialog);
-                    UserAccount tmp = userRepository.findById(personToChange.getId()).get();
-                    personToChange.setUsername(tmp.getUsername());
-                    personToChange.setPassword(tmp.getPassword());
-                    userRepository.save(personToChange);
+                    dataProvider.refreshAll();
+                });
+
+        Button modifyPersonButton = new Button("Modify user account",
+                clickEvent -> {
+                    final UserAccount personToChange = grid.getSelectionModel().getFirstSelectedItem().get();
+                    UpdateUserDialog updateUserDialog = new UpdateUserDialog("Update user account", personToChange, userRepository);
+                    updateUserDialog.setHeight("400px");
+                    updateUserDialog.setWidth("400px");
+
+                    // Set window position.
+                    updateUserDialog.setPositionX(200);
+                    updateUserDialog.setPositionY(50);
+                    updateUserDialog.addCloseListener(closeEvent -> {
+                        dataProvider.refreshAll();
+                    });
+                    UI.getCurrent().addWindow(updateUserDialog);
                     grid.getSelectionModel().deselectAll();
                     dataProvider.refreshAll();
                 });
