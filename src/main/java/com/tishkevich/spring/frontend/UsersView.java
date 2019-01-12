@@ -15,14 +15,13 @@ import java.util.List;
 
 @SpringView(name = UsersView.VIEW_NAME)
 public class UsersView extends VerticalLayout implements View {
-    public static final String VIEW_NAME = "view";
+    public static final String VIEW_NAME = "users";
 
     @Autowired
     private UserRepository userRepository;
 
     @PostConstruct
     void init() {
-        addComponent(new Label("This is a view scoped view"));
         DataProvider<UserAccount, Void> dataProvider = DataProvider.fromCallbacks(
                 // First callback fetches items based on a query
                 query -> {
@@ -55,7 +54,7 @@ public class UsersView extends VerticalLayout implements View {
                     //tmpAcc = userRepository.save(tmpAcc);
                     UpdateUserDialog updateUserDialog = new UpdateUserDialog("Create new user account", tmpAcc, userRepository);
                     updateUserDialog.setHeight("400px");
-                    updateUserDialog.setWidth("400px");
+                    updateUserDialog.setWidth("300px");
 
                     // Set window position.
                     updateUserDialog.setPositionX(200);
@@ -72,7 +71,7 @@ public class UsersView extends VerticalLayout implements View {
                     final UserAccount personToChange = grid.getSelectionModel().getFirstSelectedItem().get();
                     UpdateUserDialog updateUserDialog = new UpdateUserDialog("Update user account", personToChange, userRepository);
                     updateUserDialog.setHeight("400px");
-                    updateUserDialog.setWidth("400px");
+                    updateUserDialog.setWidth("300px");
 
                     // Set window position.
                     updateUserDialog.setPositionX(200);

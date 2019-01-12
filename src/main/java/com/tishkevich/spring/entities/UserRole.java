@@ -16,11 +16,11 @@ public class UserRole {
     @Column(name = "Id", nullable = false)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "username", nullable = false)
     private UserAccount user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "Role_Id", nullable = false)
     private AppRole appRole;
 }

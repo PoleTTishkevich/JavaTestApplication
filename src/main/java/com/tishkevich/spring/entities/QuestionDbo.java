@@ -22,7 +22,7 @@ public class QuestionDbo {
     @Column(columnDefinition = "TEXT")
     private String questionText;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id")
     private Category category;
 

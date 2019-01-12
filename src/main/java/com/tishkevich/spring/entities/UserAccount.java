@@ -3,6 +3,8 @@ package com.tishkevich.spring.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @Entity
@@ -23,4 +25,5 @@ public class UserAccount {
 
     @Column(name = "password", length = 128, nullable = false)
     private String password;
+
 }

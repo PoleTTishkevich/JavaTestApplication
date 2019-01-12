@@ -10,6 +10,7 @@ import com.vaadin.navigator.ViewDisplay;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.spring.annotation.SpringViewDisplay;
+import com.vaadin.spring.navigator.SpringNavigator;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,9 @@ import java.util.List;
 public class MainView extends UI implements ViewDisplay {
 
     private Panel springViewDisplay;
+
+    @Autowired
+    private SpringNavigator navigator;
 
     @Autowired
     private QuestionDboService questionDboService;
@@ -92,7 +96,9 @@ public class MainView extends UI implements ViewDisplay {
             springViewDisplay = new Panel();
             springViewDisplay.setSizeFull();
             root.addComponent(springViewDisplay);
+            navigator.init(this, springViewDisplay);
             root.setExpandRatio(springViewDisplay, 1.0f);
+            navigator.navigateTo(UsersView.VIEW_NAME);
         }
 
     }

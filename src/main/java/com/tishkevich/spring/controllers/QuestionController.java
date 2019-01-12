@@ -3,24 +3,25 @@ package com.tishkevich.spring.controllers;
 import com.tishkevich.spring.entities.*;
 import com.tishkevich.spring.service.CategoryService;
 import com.tishkevich.spring.service.QuestionDboService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.tishkevich.spring.service.ResultService;
+import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.*;
+import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@AllArgsConstructor
 public class QuestionController {
+
     private final QuestionDboService questionDboService;
 
     private final CategoryService categoryService;
 
-    @Autowired
-    public QuestionController(QuestionDboService questionDboService, CategoryService categoryService) {
-        this.questionDboService = questionDboService;
-        this.categoryService = categoryService;
-    }
+    private final ResultService resultService;
 
     @GetMapping(value = "/getAllQuestions")
     public ApiResponse<QuestionDto> getAllQuestions() {
@@ -60,8 +61,28 @@ public class QuestionController {
 
     @PostMapping(value = "/check")
     public ApiResponse<Integer> checkAnswers(@RequestBody List<AnswerDto> answers) {
-        Integer result = questionDboService.checkAnswers(answers);
-        return new ApiResponse<Integer>(HttpStatus.OK.value(), "Question added successfully.", new Integer[]{result});
+        int result = 0;
+        int count = 0;
+        for (AnswerDto answer : answers) {
+            count++;
+            QuestionDbo tmpQuestion = questionDboService.findById(answer.getId());
+            if (answer.getAnswerNumber() == tmpQuestion.getCorrectAnswerNumber()) {
+                result++;
+            }
+        }
+        final String username = "User";
+        if (resultService.saveResult(username, result) != null) {
+            return new ApiResponse<Integer>(HttpStatus.OK.value(), "Question added successfully.", new Integer[]{count == 0 ? 0 : result * 10 / count});
+        }
+        return new ApiResponse<Integer>(HttpStatus.BAD_REQUEST.value(), "Results were not saved", null);
+
+    }
+
+    @GetMapping(value = "/results")
+    public ApiResponse getResultsByUsername() {
+        final String username = "User";
+        final List<ResultDto> resultList = resultService.getAllByUsername(username);
+        return new ApiResponse<ResultDto>(HttpStatus.OK.value(), "Results recieved", resultList.toArray(new ResultDto[resultList.size()]));
     }
 
     @DeleteMapping("/delete/{id}")

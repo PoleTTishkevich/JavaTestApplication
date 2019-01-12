@@ -3,19 +3,22 @@ package com.tishkevich.spring.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @Entity
 @Table(name = "App_Role", //
-		uniqueConstraints = { //
-				@UniqueConstraint(name = "APP_ROLE_UK", columnNames = "Role_Name") })
+        uniqueConstraints = { //
+                @UniqueConstraint(name = "APP_ROLE_UK", columnNames = "Role_Name")})
 class AppRole {
 
-	@Id
-	@GeneratedValue
-	@Column(name = "Role_Id", nullable = false)
-	private Long roleId;
+    @Id
+    @GeneratedValue
+    @Column(name = "Role_Id", nullable = false)
+    private Long roleId;
 
-	@Column(name = "Role_Name", length = 30, nullable = false)
-	private String roleName;
+    @Column(name = "Role_Name", length = 30, nullable = false)
+    private String roleName;
+
 }
