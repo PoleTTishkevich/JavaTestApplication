@@ -1,26 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97db5688-66a5-42aa-b33b-65ef9fb160e7" name="Default Changelist" comment="add question dialogs">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/ResultDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/ResultEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/frontend/UpdateQuestionDialog.java" afterDir="false" />
+    <list default="true" id="97db5688-66a5-42aa-b33b-65ef9fb160e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myjavatestapplication.iml" beforeDir="false" afterPath="$PROJECT_DIR$/myjavatestapplication.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/controllers/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/controllers/QuestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/AppRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/AppRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/QuestionDbo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/QuestionDbo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/UserAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/UserAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/entities/UserRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/frontend/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/frontend/MainView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/frontend/QuestionsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/frontend/QuestionsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/frontend/UsersView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tishkevich/spring/frontend/UsersView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/liquibase-changeLog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/liquibase-changeLog.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/controllers/QuestionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/controllers/QuestionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/entities/AppRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/entities/AppRole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/entities/QuestionDbo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/entities/QuestionDbo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/entities/UserAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/entities/UserAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/entities/UserRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tishkevich/spring/entities/UserRole.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="C:\Users\Pavel\Downloads\myjavatestapplication\.idea\shelf/" />
@@ -105,7 +87,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
+            <state relative-caret-position="136">
               <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
             </state>
           </provider>
@@ -415,7 +397,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547329797402" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547331100485" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/framework-spring-tutorial-master" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -598,7 +580,14 @@
       <option name="project" value="LOCAL" />
       <updated>1547071805547</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="last version before merge">
+      <created>1547330374166</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1547330374168</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -615,7 +604,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32503662" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -627,16 +615,16 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info id="Learn" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" sideWeight="0.49853587" visible="true" weight="0.32970452" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49707174" visible="true" weight="0.41679627" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49853587" weight="0.32970452" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49633968" weight="0.41679627" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32850242" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49924356" weight="0.32850242" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49853587" visible="true" weight="0.3281493" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50292826" side_tool="true" weight="0.41679627" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5014641" side_tool="true" visible="true" weight="0.3281493" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3281493" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.3282313" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
@@ -771,7 +759,8 @@
     <MESSAGE value="add vaadin views 2" />
     <MESSAGE value="add vaadin views second version" />
     <MESSAGE value="add question dialogs" />
-    <option name="LAST_COMMIT_MESSAGE" value="add question dialogs" />
+    <MESSAGE value="last version before merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="last version before merge" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1185,7 +1174,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
+        <state relative-caret-position="136">
           <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
         </state>
       </provider>
