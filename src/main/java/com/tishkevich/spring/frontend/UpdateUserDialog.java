@@ -19,22 +19,37 @@ public class UpdateUserDialog extends Window {
         TextField password = new TextField("Password: ");
         // Shorthand for cases without extra configuration
 
-        binder.bind(username, UserAccount::getUsername, UserAccount::setUsername);
-        binder.bind(password, UserAccount::getPassword, UserAccount::setPassword);
+        binder.forField(username).withValidator(
+                name -> name.length() >= 3,
+                "Username must contain at least three characters")
+                .bind(UserAccount::getUsername, UserAccount::setUsername);
+        binder.forField(password).withValidator(
+                name -> name.length() >= 3,
+                "Password must contain at least three characters")
+                .bind(UserAccount::getPassword, UserAccount::setPassword);
         binder.readBean(userAccount);
-        layout.addComponents(username, password, new Button("Submit", event -> {
-            try {
-                binder.writeBean(userAccount);
+        Button saveButton = new Button("Submit", event -> {
+            if (binder.writeBeanIfValid(userAccount)) {
                 userRepository.save(userAccount);
-            } catch (ValidationException e) {
-                Notification.show("Person could not be saved, " +
-                        "please check error messages for each field.");
+            } else {
+
+                Notification.show("Validation error count: "
+                        + binder.validate().getValidationErrors().size());
             }
             close();
-        }), new Button("Cancel", event -> {
+        });
+        Button resetButton = new Button("Cancel", event -> {
             binder.readBean(userAccount);
             close();
-        }));
+        });
+        layout.addComponents(username, password, saveButton, resetButton);
+        binder.addStatusChangeListener(event -> {
+            boolean isValid = event.getBinder().isValid();
+            boolean hasChanges = event.getBinder().hasChanges();
+
+            saveButton.setEnabled(hasChanges && isValid);
+            resetButton.setEnabled(hasChanges);
+        });
         setContent(layout);
     }
 }

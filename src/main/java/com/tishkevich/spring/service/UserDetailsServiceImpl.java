@@ -59,7 +59,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         return userRepository.count();
     }
 
-    public List<UserAccount> findAllWithLimit(Long startPosition, int count) {
-        return userRepository.findAllWithLimit(startPosition, count);
+    public List<UserAccount> findAllWithLimit(Long startPosition, int count, String filterfrase) {
+        if (filterfrase.isEmpty())
+            return userRepository.findAllWithLimit(startPosition, count);
+        else return userRepository.findAllWithLimitAndFilter(startPosition, count, "%" + filterfrase + "%");
+    }
+
+    public long countWithFilter(String filterfrase) {
+        if (filterfrase.isEmpty()) return count();
+        return userRepository.countWithFilter("%" + filterfrase + "%");
     }
 }
