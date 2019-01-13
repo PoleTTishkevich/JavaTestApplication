@@ -257,6 +257,22 @@ ALTER TABLE `user_account`
 ALTER TABLE `user_role`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
 
+
+CREATE TABLE `result` (
+  `username` varchar(36) NOT NULL,
+  `result_value` int UNSIGNED NOT NULL ,
+  `date` datetime NOT NULL
+  ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+INSERT INTO `result` (`username`, `result_value`, `date`)
+VALUES
+       ('User', 75, '2019-01-02 20:50:50'),
+       ('User', 60, '2019-01-03 20:51:20'),
+       ('Admin', 84, '2019-01-04 16:03:40');
+
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
